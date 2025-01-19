@@ -1,0 +1,5 @@
+array=[]
+int_array=[3,4,5,6,7,87,8]
+char_array=["s","a","l","u","t"]
+float_array=[5.4,34.5,6.2]
+bool_array=[True,False,False,True]

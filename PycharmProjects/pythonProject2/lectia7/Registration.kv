@@ -1,0 +1,86 @@
+ScreenManager:
+    FirstWindow:
+    SecondWindow:
+    AppWindow:
+
+<FirstWindow>:
+    name: "FirstWindow"
+    MDCard:
+        size: "400", "500"
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        orientation: "vertical"
+        padding: 25
+        spacing: 25
+
+        MDLabel:
+            id: label_Sign_Up
+            text: "Sign Up"
+            halign: "center"
+            font_size: 80
+
+        MDTextField:
+            id: username
+            hint_text: "email"
+            font_size: 18
+            width: 200
+            size_hint_x: None
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            id: password
+            hint_text: "password"
+            password: True
+            font_size: 18
+            width: 200
+            size_hint_x: None
+            pos_hint: {"center_x": 0.5}
+
+        MDRoundFlatButton:
+            text: "Sign up"
+            text_color: [1, 1, 1, 1]  # White text color
+            line_color: [0, 0, 0, 1]  # Black line color
+            font_size: 20
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            on_press: app.sign_up(username.text, password.text)
+
+<SecondWindow>:
+    name: "SecondWindow"
+    MDCard:
+        size_hint: None, None
+        size: "400", "500"
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        orientation: "vertical"
+        padding: 25
+        spacing: 25
+
+        MDLabel:
+            id: label_reg
+            text: "Registration"
+            halign: "center"
+            font_size: 45
+
+        MDRoundFlatIconButton:
+            text: "Back to First Window"
+            theme_color: "Primary"
+            line_color: [0, 0, 0, 1]  # Black line color
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            on_press: app.root.current = "FirstWindow"
+
+<AppWindow>:
+    name: "AppWindow"
+    MDCard:
+        size_hint: None, None
+        size: "400", "500"
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        orientation: "vertical"
+        padding: 25
+        spacing: 25
+
+        MDLabel:
+            id: app_card
+            text: "Welcome to the App!"
+            halign: "center"
+            font_size: 45
